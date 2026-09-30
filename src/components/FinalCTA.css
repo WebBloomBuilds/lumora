@@ -1,0 +1,111 @@
+/* ==========================================================================
+   FINAL CTA SECTION — LUMORA
+   ========================================================================== */
+
+.final-cta-section {
+  padding: 9rem 0;
+  background-color: var(--color-espresso-rich);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Ambient animated background elements */
+.final-cta-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 750px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(197, 160, 89, 0.15) 0%, rgba(19, 15, 12, 0) 75%);
+  pointer-events: none;
+  animation: pulseAura 8s ease-in-out infinite alternate;
+}
+
+@keyframes pulseAura {
+  0% {
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.15);
+    opacity: 1;
+  }
+}
+
+/* Decorative Ring Orbits */
+.final-cta-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  border: 1px dashed rgba(197, 160, 89, 0.12);
+  pointer-events: none;
+}
+
+.ring-outer {
+  width: 780px;
+  height: 780px;
+  transform: translate(-50%, -50%) rotate(0deg);
+  animation: slowOrbit 45s linear infinite;
+}
+
+.ring-inner {
+  width: 520px;
+  height: 520px;
+  transform: translate(-50%, -50%) rotate(0deg);
+  animation: slowOrbitRev 35s linear infinite;
+}
+
+@keyframes slowOrbit {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes slowOrbitRev {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(-360deg); }
+}
+
+.final-cta-content {
+  position: relative;
+  z-index: 10;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.final-cta-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 6.5vw, 5.2rem);
+  font-weight: 300;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--color-cream);
+  margin-bottom: 2.5rem;
+}
+
+.final-cta-heading span {
+  display: block;
+}
+
+.final-cta-heading span:last-child {
+  font-style: italic;
+  color: var(--color-gold-light);
+}
+
+.final-cta-btn-wrap {
+  display: inline-block;
+}
+
+.final-cta-btn {
+  padding: 1.15rem 2.8rem;
+  font-size: 0.92rem;
+  letter-spacing: 0.14em;
+}
+
+@media (max-width: 640px) {
+  .final-cta-section {
+    padding: 6rem 0;
+  }
+}

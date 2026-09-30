@@ -1,0 +1,120 @@
+/* ==========================================================================
+   STATISTICS & FEATURES SECTION (MINIMAL DARK) — LUMORA
+   ========================================================================== */
+
+.stats-section {
+  padding: 6.5rem 0;
+  background-color: var(--color-espresso);
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(197, 160, 89, 0.15);
+  border-bottom: 1px solid rgba(197, 160, 89, 0.15);
+}
+
+/* Subtle background radiance */
+.stats-glow-orb {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(197, 160, 89, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  position: relative;
+  transition: transform var(--transition-fast);
+}
+
+.stat-item:hover {
+  transform: translateY(-4px);
+}
+
+/* Vertical divider between stats */
+.stat-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -1.5rem;
+  top: 20%;
+  height: 60%;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(251, 248, 243, 0.12), transparent);
+}
+
+/* Number styling */
+.stat-number-wrap {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}
+
+.stat-number {
+  font-family: var(--font-serif);
+  font-size: clamp(3.2rem, 5.5vw, 4.8rem);
+  font-weight: 300;
+  line-height: 1;
+  color: var(--color-cream);
+  letter-spacing: -0.02em;
+}
+
+.stat-suffix {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+  color: var(--color-gold);
+  margin-left: 2px;
+}
+
+/* Label & Subtext */
+.stat-label {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-cream);
+  margin-bottom: 0.4rem;
+}
+
+.stat-subtext {
+  font-size: 0.8rem;
+  color: var(--text-on-dark-muted);
+  max-width: 200px;
+  line-height: 1.45;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3.5rem 2rem;
+  }
+  .stat-item:not(:last-child)::after {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .stats-section {
+    padding: 4.5rem 0;
+  }
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 2.75rem;
+  }
+}

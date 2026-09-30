@@ -1,0 +1,214 @@
+/* ==========================================================================
+   OUR STORY SECTION — LUMORA
+   ========================================================================== */
+
+.story-section {
+  padding: 8rem 0;
+  background-color: var(--color-cream);
+  position: relative;
+  overflow: hidden;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 5.5rem;
+  align-items: center;
+}
+
+/* Left: Image Container with Reveal and Frame */
+.story-image-wrapper {
+  position: relative;
+}
+
+.story-image-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 3px;
+  box-shadow: var(--shadow-lg);
+  background-color: var(--color-sand);
+}
+
+.story-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.story-image-wrapper:hover .story-image {
+  transform: scale(1.03);
+}
+
+/* Decorative backdrop accent */
+.story-image-accent {
+  position: absolute;
+  top: -1.5rem;
+  left: -1.5rem;
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--border-gold);
+  border-radius: 3px;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* Floating Quote Badge on Image */
+.story-floating-badge {
+  position: absolute;
+  bottom: 2rem;
+  right: -2rem;
+  background: rgba(251, 248, 243, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 1.4rem 1.6rem;
+  border-radius: 3px;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-md);
+  max-width: 240px;
+  z-index: 3;
+}
+
+.story-badge-year {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--color-espresso);
+  display: block;
+}
+
+.story-badge-caption {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin-top: 0.35rem;
+}
+
+/* Right: Content */
+.story-content {
+  padding-right: 1.5rem;
+}
+
+.story-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 4.2vw, 3.4rem);
+  font-weight: 400;
+  line-height: 1.18;
+  letter-spacing: -0.015em;
+  color: var(--color-espresso);
+  margin-bottom: 1.8rem;
+}
+
+.story-paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.story-paragraph {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+.story-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-espresso);
+  padding-bottom: 0.5rem;
+  position: relative;
+  transition: all var(--transition-smooth);
+}
+
+.story-cta-btn::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background-color: var(--color-gold);
+  transition: width var(--transition-smooth), transform var(--transition-smooth);
+}
+
+.story-cta-btn:hover {
+  color: var(--color-gold);
+}
+
+.story-cta-btn:hover .story-cta-arrow {
+  transform: translateX(6px);
+}
+
+.story-cta-arrow {
+  transition: transform var(--transition-fast);
+}
+
+/* Pill metrics below story */
+.story-highlights {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.story-highlight-item h5 {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--color-espresso);
+}
+
+.story-highlight-item span {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .story-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  .story-image-wrapper {
+    max-width: 580px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .story-floating-badge {
+    right: 1rem;
+    bottom: 1rem;
+  }
+  .story-content {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .story-section {
+    padding: 5rem 0;
+  }
+  .story-image-accent {
+    display: none;
+  }
+  .story-highlights {
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .story-floating-badge {
+    display: none;
+  }
+}

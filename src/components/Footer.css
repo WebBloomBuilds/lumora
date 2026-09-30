@@ -1,0 +1,121 @@
+/* ==========================================================================
+   FOOTER — LUMORA
+   ========================================================================== */
+
+.lumora-footer {
+  background-color: var(--color-espresso);
+  border-top: 1px solid rgba(197, 160, 89, 0.2);
+  color: var(--color-cream);
+  padding: 5rem 0 2.5rem 0;
+  position: relative;
+}
+
+.footer-top-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 3rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid rgba(251, 248, 243, 0.08);
+}
+
+/* Brand Section */
+.footer-brand {
+  max-width: 360px;
+}
+
+.footer-logo {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  color: var(--color-cream);
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 0.65rem;
+}
+
+.footer-tagline {
+  font-size: 0.95rem;
+  color: var(--text-on-dark-muted);
+  line-height: 1.6;
+}
+
+/* Footer Navigation Links */
+.footer-links-group {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  list-style: none;
+}
+
+.footer-link a {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(251, 248, 243, 0.75);
+  transition: color var(--transition-fast);
+  position: relative;
+}
+
+.footer-link a:hover {
+  color: var(--color-gold);
+}
+
+/* Bottom Bar */
+.footer-bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 2.5rem;
+  font-size: 0.82rem;
+  color: rgba(251, 248, 243, 0.5);
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.footer-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: rgba(197, 160, 89, 0.85);
+  letter-spacing: 0.04em;
+}
+
+.footer-back-to-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: rgba(251, 248, 243, 0.75);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid rgba(251, 248, 243, 0.15);
+  padding: 0.45rem 1rem;
+  border-radius: 2px;
+  transition: all var(--transition-fast);
+}
+
+.footer-back-to-top:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+@media (max-width: 860px) {
+  .footer-top-row {
+    flex-direction: column;
+    gap: 2.5rem;
+    padding-bottom: 3rem;
+  }
+  .footer-links-group {
+    flex-wrap: wrap;
+    gap: 1.75rem;
+  }
+  .footer-bottom-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

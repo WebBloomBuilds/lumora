@@ -1,0 +1,220 @@
+/* ==========================================================================
+   VISIT US SECTION — LUMORA
+   ========================================================================== */
+
+.visit-section {
+  padding: 8rem 0;
+  background-color: var(--color-espresso);
+  color: var(--color-cream);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background visual with subtle warm spotlight */
+.visit-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 75% 50%, rgba(197, 160, 89, 0.12) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.visit-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 5rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* Left: Info Details */
+.visit-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.visit-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  color: var(--color-cream);
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+}
+
+.visit-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-on-dark-muted);
+  line-height: 1.7;
+  margin-bottom: 3rem;
+  max-width: 520px;
+}
+
+/* Info Cards Block */
+.visit-details-box {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 3.25rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(251, 248, 243, 0.12);
+}
+
+.visit-info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.visit-icon-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(197, 160, 89, 0.12);
+  border: 1px solid rgba(197, 160, 89, 0.3);
+  color: var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.visit-info-text h4 {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 0.4rem;
+}
+
+.visit-info-text p {
+  color: var(--color-cream);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.visit-info-text span {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-on-dark-muted);
+  margin-top: 2px;
+}
+
+/* Button Group */
+.visit-button-group {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.visit-btn-directions {
+  padding: 1rem 2rem;
+}
+
+/* Right: Visual Storefront Card */
+.visit-image-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3.5;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(251, 248, 243, 0.12);
+}
+
+.visit-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.visit-image-card:hover .visit-image {
+  transform: scale(1.04);
+}
+
+.visit-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(19, 15, 12, 0.85) 0%, transparent 55%);
+}
+
+.visit-card-floating-badge {
+  position: absolute;
+  bottom: 1.75rem;
+  left: 1.75rem;
+  right: 1.75rem;
+  padding: 1.25rem 1.5rem;
+  background: rgba(19, 15, 12, 0.78);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(197, 160, 89, 0.3);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.visit-badge-left h5 {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--color-cream);
+}
+
+.visit-badge-left span {
+  font-size: 0.78rem;
+  color: var(--text-on-dark-muted);
+}
+
+.visit-badge-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  background-color: rgba(74, 222, 128, 0.15);
+  border: 1px solid rgba(74, 222, 128, 0.3);
+  color: #4ade80;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.status-pulsing-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #4ade80;
+  animation: pulseGlow 2s infinite;
+}
+
+@media (max-width: 1024px) {
+  .visit-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .visit-section {
+    padding: 5rem 0;
+  }
+  .visit-button-group {
+    flex-direction: column;
+    width: 100%;
+  }
+  .visit-button-group button {
+    width: 100%;
+  }
+  .visit-card-floating-badge {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+}
